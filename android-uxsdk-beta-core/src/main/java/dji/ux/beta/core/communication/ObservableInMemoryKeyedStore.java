@@ -176,7 +176,7 @@ public class ObservableInMemoryKeyedStore implements ObservableKeyedStore {
                     DJILog.d(TAG, "Update on null key");
                     return;
                 }
-                if (value.getClass().equals(key.getValueType())) {
+                if (value != null && key.getValueType().isAssignableFrom(value.getClass())) {
                     ModelValue previousValue = store.getModelValue(key.getKeyPath());
                     if (key.getUpdateType() == UXKeys.UpdateType.ON_EVENT ||
                             (key.getUpdateType() == UXKeys.UpdateType.ON_CHANGE &&
