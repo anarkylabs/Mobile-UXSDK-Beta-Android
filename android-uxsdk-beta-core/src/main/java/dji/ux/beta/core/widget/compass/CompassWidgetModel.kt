@@ -29,6 +29,7 @@ import android.hardware.SensorManager
 import android.location.Location
 import android.location.LocationListener
 import android.os.Bundle
+import android.util.Log
 import android.view.Surface
 import android.view.WindowManager
 import dji.common.remotecontroller.GPSData
@@ -236,8 +237,8 @@ class CompassWidgetModel(djiSdkModel: DJISDKModel,
             }
             val mobileDeviceAzimuth = sensorValue + QUARTER_TURN
             mobileDeviceAzimuthProcessor.onNext(mobileDeviceAzimuth)
+            updateStates()
         }
-        updateStates()
     }
 
     override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
