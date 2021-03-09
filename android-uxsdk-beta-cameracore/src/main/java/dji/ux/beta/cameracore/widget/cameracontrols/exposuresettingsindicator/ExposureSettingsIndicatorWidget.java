@@ -79,6 +79,7 @@ public class ExposureSettingsIndicatorWidget extends FrameLayoutWidget implement
     protected void initView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         inflate(context, R.layout.uxsdk_widget_exposure_settings_indicator, this);
         foregroundImageView = findViewById(R.id.image_view_exposure_settings_indicator);
+        setOnClickListener(this);
         initDefaults();
 
         if (!isInEditMode()) {
