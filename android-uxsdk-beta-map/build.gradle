@@ -67,7 +67,7 @@ android {
 }
 
 dependencies {
-    api project(':android-uxsdk-beta-core')
+    api project(path: ':android-uxsdk-beta-core')
     implementation ('com.dji:dji-sdk:4.14', {
         /**
          * Comment the "library-anti-distortion" if your app needs Anti Distortion for Mavic 2 Pro
