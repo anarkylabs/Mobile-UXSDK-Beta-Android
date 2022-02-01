@@ -25,18 +25,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    lintOptions {
-        abortOnError = false
-    }
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
     publishNonDefault true
     resourcePrefix "uxsdk_"
     defaultConfig {
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 1
-        versionName "4.5"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,10 +40,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         mock {
-            debuggable true
         }
         bridge {
-            debuggable true
         }
     }
     compileOptions {
@@ -60,9 +52,8 @@ android {
         unitTests.returnDefaultValues = true
     }
     testBuildType "debug"
-    aaptOptions {
-        // PNG optimization
-        cruncherEnabled true
+    lint {
+        abortOnError false
     }
 }
 
