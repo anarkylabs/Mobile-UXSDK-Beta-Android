@@ -245,7 +245,7 @@ class CompassWidgetModel(djiSdkModel: DJISDKModel,
         // Do nothing
     }
 
-    override fun onLocationChanged(location: Location?) {
+    override fun onLocationChanged(location: Location) {
         if (location != null) {
             // Update the center type to be the RC/Mobile device type
             centerTypeProcessor.onNext(CenterType.RC_MOBILE_GPS)
